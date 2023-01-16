@@ -1,0 +1,14 @@
+.profile-info__button {
+  border: 1px solid #FFFFFF;
+  background-color: #000000;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  position: absolute;
+  bottom: 40px;
+}

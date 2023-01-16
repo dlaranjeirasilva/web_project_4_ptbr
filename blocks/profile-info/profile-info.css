@@ -1,0 +1,13 @@
+.profile-info {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 165px;
+  display: inline-grid;
+  grid-template-columns: 373px 42px;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: baseline;
+  column-gap: 18px;
+  row-gap: 16px;
+  height: 77px;
+  width: 415px;
+}

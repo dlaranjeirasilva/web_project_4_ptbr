@@ -1,0 +1,6 @@
+.profile-info__about-me {
+  color: #FFFFFF;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+}
