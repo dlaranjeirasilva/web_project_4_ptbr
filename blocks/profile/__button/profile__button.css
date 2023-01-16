@@ -1,0 +1,10 @@
+.profile__button {
+  height: 50px;
+  width: 150px;
+  color: #FFFFFF;
+  background-color: #000000;
+  border: 2px solid #FFFFFF;
+  font-size: 40px;
+  font-weight: 100;
+  border-radius: 2px;
+}
