@@ -1,6 +1,7 @@
 .profile__button {
   height: 50px;
   width: 150px;
+  cursor: pointer;
   color: #FFFFFF;
   background-color: #000000;
   border: 2px solid #FFFFFF;
