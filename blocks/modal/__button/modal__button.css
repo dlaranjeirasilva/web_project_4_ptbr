@@ -1,0 +1,10 @@
+.modal__button {
+  position: absolute;
+  cursor: pointer;
+  font-size: 50px;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  top: 110px;
+  right: 220px;
+}
