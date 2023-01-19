@@ -28,6 +28,7 @@
 @import url("../blocks/footer/__copyright/footer__copyright.css");
 
 @import url("../blocks/modal/modal.css");
+@import url("../blocks/modal/_opened/modal_opened.css");
 @import url("../blocks/modal/__button/modal__button.css");
 
 @import url("../blocks/form/form.css");
