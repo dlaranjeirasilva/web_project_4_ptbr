@@ -8,3 +8,7 @@
   top: 110px;
   right: 220px;
 }
+
+.modal__button:hover {
+  opacity: 0.6;
+}

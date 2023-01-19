@@ -3,3 +3,7 @@
   width: 21px;
   cursor: pointer;
 }
+
+.card__button:hover {
+  opacity: 0.6;
+}
