@@ -2,13 +2,21 @@
   position: absolute;
   cursor: pointer;
   font-size: 50px;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: rgba(0, 0, 0, 0);
   border: 0;
-  top: 110px;
-  right: 220px;
+  top: -35px;
+  right: -35px;
 }
 
 .modal__button:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 320px) {
+  .modal__button {
+    top: -45px;
+    right: 0;
+    width: 26px;
+  }
 }

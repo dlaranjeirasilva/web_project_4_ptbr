@@ -11,3 +11,24 @@
   height: 77px;
   width: 415px;
 }
+
+@media screen and (max-width: 768px) {
+  .profile-info {
+    padding-right: 0;
+    width: 373px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile-info {
+    grid-template-columns: 222px 60px;
+    column-gap: 0;
+    row-gap: 0;
+    height: initial;
+    width: initial;
+    padding: 0;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 36px;
+  }
+}
