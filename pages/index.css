@@ -1,0 +1,39 @@
+@import url("../fonts/inter.css");
+
+@import url("../blocks/root/root.css");
+
+@import url("../blocks/header/header.css");
+@import url("../blocks/header/__logo/header__logo.css");
+
+@import url("../blocks/main/main.css");
+
+@import url("../blocks/profile/profile.css");
+@import url("../blocks/profile/__avatar/profile__avatar.css");
+@import url("../blocks/profile/__button/profile__button.css");
+
+@import url("../blocks/profile-info/profile-info.css");
+@import url("../blocks/profile-info/__name/profile-info__name.css");
+@import url("../blocks/profile-info/__button/profile-info__button.css");
+@import url("../blocks/profile-info/__about-me/profile-info__about-me.css");
+
+@import url("../blocks/cards/cards.css");
+
+@import url("../blocks/card/card.css");
+@import url("../blocks/card/__image/card__image.css");
+@import url("../blocks/card/__info/card__info.css");
+@import url("../blocks/card/__title/card__title.css");
+@import url("../blocks/card/__button/card__button.css");
+
+@import url("../blocks/footer/footer.css");
+@import url("../blocks/footer/__copyright/footer__copyright.css");
+
+@import url("../blocks/modal/modal.css");
+@import url("../blocks/modal/_opened/modal_opened.css");
+@import url("../blocks/modal/__button/modal__button.css");
+@import url("../blocks/modal/__container/modal__container.css");
+
+@import url("../blocks/form/form.css");
+@import url("../blocks/form/__title/form__title.css");
+@import url("../blocks/form/__name/form__name.css");
+@import url("../blocks/form/__about-me/form__about-me.css");
+@import url("../blocks/form/__button/form__button.css");

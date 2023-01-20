@@ -1,0 +1,19 @@
+.form__name {
+  height: 30px;
+  width: 358px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  padding: 0;
+  line-height: 2;
+  padding-top: 54px;
+}
+
+@media screen and (max-width: 320px) {
+  .form__name {
+    width: 238px;
+  }
+}

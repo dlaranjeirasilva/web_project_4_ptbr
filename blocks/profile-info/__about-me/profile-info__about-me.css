@@ -1,0 +1,27 @@
+.profile-info__about-me {
+  color: #FFFFFF;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  font-size: 18px;
+  font-weight: 400;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-info__about-me {
+    font-size: 14px;
+    padding: 0;
+    width: 373px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile-info__about-me {
+    width: initial;
+    display: flex;
+    grid-column-end: 4;
+    padding-top: 10px;
+    justify-content: center;
+  }
+}
