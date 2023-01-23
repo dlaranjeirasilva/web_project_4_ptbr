@@ -2,15 +2,18 @@
 
 ### Visão geral
 
+* Introdução
 * Figma
-* Imagens
+* Deployment
+
+**Introdução**
+
+Projeto focado no uso de HTML, CSS e JS básico. Uma página protótipo de rede social onde constam seus hobbies, nome de usuário, cards sobre suas histórias e a possibilidade de edição destes.
 
 **Figma**
 
 * [Link para o projeto no Figma](https://www.figma.com/file/XfB6BSINvliub43JgKza1e/WEB.-Sprint-4.-Around-The-U.S.-desktop-%2B-mobile-pt)
 
-**Imagens**
+**Deployment**
 
-A maneira como você fará isso no trabalho é exportando imagens diretamente do Figma — recomendamos fazer isso para praticar mais. Não se esqueça de otimizá-los [aqui](https://tinypng.com/), para que seu projeto carregue mais rápido.
-
-Divirta-se com JavaScript!
+[Deploy do projeto aqui!](https://dlaranjeirasilva.github.io/web_project_4_ptbr/)

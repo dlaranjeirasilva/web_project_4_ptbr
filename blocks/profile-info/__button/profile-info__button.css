@@ -1,8 +1,8 @@
 .profile-info__button {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   background-color: #000000;
   cursor: pointer;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,12 +19,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  .profile-info__button{
+  .profile-info__button {
     font-size: 14px;
     height: 50px;
     width: 40px;
     right: -38px;
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
   }
 }
 
