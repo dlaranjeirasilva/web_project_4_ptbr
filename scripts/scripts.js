@@ -1,4 +1,4 @@
-let modal = document.querySelector(".modal");
+const modal = document.querySelector(".modal");
 let modalProfileInfoName = document.querySelector(".profile-info__name");
 let modalProfileInforAboutMe = document.querySelector(".profile-info__about-me");
 let modalCloseButton = document.querySelector(".modal__button");
