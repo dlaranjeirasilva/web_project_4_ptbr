@@ -1,11 +1,11 @@
 const modal = document.querySelector(".modal");
-let modalProfileInfoName = document.querySelector(".profile-info__name");
-let modalProfileInforAboutMe = document.querySelector(".profile-info__about-me");
-let modalCloseButton = document.querySelector(".modal__button");
-let profileInfoButton = document.querySelector(".profile-info__button");
-let formName = document.querySelector(".form__name");
-let formAboutMe = document.querySelector(".form__about-me");
-let formElement = document.querySelector("form");
+const modalProfileInfoName = document.querySelector(".profile-info__name");
+const modalProfileInforAboutMe = document.querySelector(".profile-info__about-me");
+const modalCloseButton = document.querySelector(".modal__button");
+const profileInfoButton = document.querySelector(".profile-info__button");
+const formName = document.querySelector(".form__name");
+const formAboutMe = document.querySelector(".form__about-me");
+const formElement = document.querySelector("form");
 
 function handleProfileFormSubmit(e) {
   e.preventDefault();
