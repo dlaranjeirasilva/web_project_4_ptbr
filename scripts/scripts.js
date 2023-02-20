@@ -48,7 +48,7 @@ const initialCards = [
   },
 ];
 
-function cardOperations(cardImageValue, cardTitleValue) {
+function handleCardOperations(cardImageValue, cardTitleValue) {
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
 
@@ -63,7 +63,7 @@ function cardOperations(cardImageValue, cardTitleValue) {
     modalPopupImage.src = e.target.getAttribute("src");
     modalPopupImage.alt = e.target.getAttribute("alt");
     modalPopupTitle.textContent = e.target.getAttribute("alt");
-    modalOperation(modalPopup);
+    toggleModalOperation(modalPopup);
   });
   cardElement.querySelector(".card__button").addEventListener("click", (e) => {
     if (e.target.getAttribute("src") == "./images/hollow-heart.svg") {
@@ -84,7 +84,7 @@ function cardOperations(cardImageValue, cardTitleValue) {
 }
 
 function handlePopupModal(e) {
-  modalOperation(e.target.parentElement.parentElement);
+  toggleModalOperation(e.target.parentElement.parentElement);
 }
 
 function handleProfileFormSubmit(e) {
@@ -93,23 +93,23 @@ function handleProfileFormSubmit(e) {
   modalProfileInfoName.textContent = formName.value;
   modalProfileInforAboutMe.textContent = formAboutMe.value;
 
-  modalOperation(e.target.parentElement.parentElement);
+  toggleModalOperation(e.target.parentElement.parentElement);
 }
 
 function handleCardFormSubmit(e) {
   e.preventDefault();
 
-  cardOperations(
+  handleCardOperations(
     e.target.lastElementChild.previousElementSibling.value,
     e.target.firstElementChild.nextElementSibling.value
   );
 
   e.target.lastElementChild.previousElementSibling.value = "";
   e.target.firstElementChild.nextElementSibling.value = "";
-  modalOperation(e.target.parentElement.parentElement);
+  toggleModalOperation(e.target.parentElement.parentElement);
 }
 
-function modalOperation(itemTarget) {
+function toggleModalOperation(itemTarget) {
   itemTarget.classList.toggle("modal_opened");
 }
 
@@ -119,25 +119,25 @@ function fillProfileInfo() {
 }
 
 profileInfoButton.addEventListener("click", () => {
-  modalOperation(modalProfile);
+  toggleModalOperation(modalProfile);
 });
 cardAddButton.addEventListener("click", () => {
-  modalOperation(modalCard);
+  toggleModalOperation(modalCard);
 });
 modalProfileCloseButton.addEventListener("click", () => {
-  modalOperation(modalProfile);
+  toggleModalOperation(modalProfile);
 });
 modalCardCloseButton.addEventListener("click", () => {
-  modalOperation(modalCard);
+  toggleModalOperation(modalCard);
 });
 modalPopupButton.addEventListener("click", () => {
-  modalOperation(modalPopup);
+  toggleModalOperation(modalPopup);
 });
 formProfileElement.addEventListener("submit", handleProfileFormSubmit);
 formCardElement.addEventListener("submit", handleCardFormSubmit);
 
 initialCards.reverse().forEach((card) => {
-  cardOperations(card.link, card.name);
+  handleCardOperations(card.link, card.name);
 });
 
 fillProfileInfo();
