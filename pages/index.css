@@ -33,6 +33,11 @@
 @import url("../blocks/modal/__button/modal__button.css");
 @import url("../blocks/modal/__container/modal__container.css");
 
+@import url("../blocks/modal/__popup-container/modal__popup-container.css");
+@import url("../blocks/modal/__popup-image/modal__popup-image.css");
+@import url("../blocks/modal/__popup-title/modal__popup-title.css");
+@import url("../blocks/modal/__popup-button/modal__popup-button.css");
+
 @import url("../blocks/form/form.css");
 @import url("../blocks/form/__title/form__title.css");
 @import url("../blocks/form/__name/form__name.css");
