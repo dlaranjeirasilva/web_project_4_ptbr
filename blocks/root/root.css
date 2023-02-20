@@ -16,7 +16,7 @@ body {
 
 .page {
   margin: 0 auto;
-  width: 1280px;
+  max-width: 1280px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 

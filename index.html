@@ -18,14 +18,15 @@
       </header>
 
       <main class="main">
-        <section class="modal">
+        <section id="modal-profile" class="modal">
           <div class="modal__container">
             <img
+              id="profile-modal__button"
               class="modal__button"
               src="./images/close-icon.png"
               alt="Ícone para fechar"
             />
-            <form class="form">
+            <form id="form-profile" class="form">
               <h2 class="form__title">Editar perfil</h2>
               <input
                 class="form__name"
@@ -44,6 +45,48 @@
           </div>
         </section>
 
+        <section id="modal-card" class="modal">
+          <div class="modal__container">
+            <img
+              id="card-modal__button"
+              class="modal__button"
+              src="./images/close-icon.png"
+              alt="Ícone para fechar"
+            />
+            <form id="form-card" class="form">
+              <h2 class="form__title">Novo Local</h2>
+              <input
+                class="form__name"
+                type="text"
+                name="title"
+                placeholder="Título"
+              />
+              <input
+                class="form__about-me"
+                type="text"
+                name="img-url"
+                placeholder="Link da imagem"
+              />
+              <button class="form__button">Salvar</button>
+            </form>
+          </div>
+        </section>
+
+        <section id="modal-popup" class="modal">
+          <div class="modal__popup-container">
+            <img
+              id="popup-modal__button"
+              class="modal__popup-button"
+              src="./images/close-icon.png"
+              alt="Ícone para fechar"
+            />
+            <div class="modal__popup-info">
+              <img src="" alt="" class="modal__popup-image" />
+              <h2 class="modal__popup-title"></h2>
+            </div>
+          </div>
+        </section>
+
         <section class="profile">
           <img
             src="./images/profile__avatar.jpg"
@@ -53,103 +96,40 @@
           <div class="profile-info">
             <h2 class="profile-info__name">Jacques Cousteau</h2>
             <p class="profile-info__about-me">Explorar</p>
-            <img src="./images/pencil-icon.svg" alt="Lápis do botão de edição de perfil" class="profile-info__button">
+            <img
+              id="profile-modal"
+              src="./images/pencil-icon.svg"
+              alt="Lápis do botão de edição de perfil"
+              class="profile-info__button"
+            />
           </div>
-          <input class="profile__button" type="button" value="+" />
+          <input
+            id="addCard_modal"
+            class="profile__button"
+            type="button"
+            value="+"
+          />
         </section>
 
         <section class="cards">
-          <div class="card">
-            <img
-              src="./images/yosemite.jpg"
-              alt="Vale do Yosemite"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">Vale do Yosemite</h2>
+          <template id="card-template">
+            <div class="card">
               <img
-                src="./images/hollow-heart.svg"
-                alt="Coração desmarcado"
-                class="card__button"
+                src="./images/garbage-can.png"
+                alt="Lixeira"
+                class="card__garbage-can"
               />
+              <img src="" alt="" class="card__image" />
+              <div class="card__info">
+                <h2 class="card__title"></h2>
+                <img
+                  src="./images/hollow-heart.svg"
+                  alt="Coração desmarcado"
+                  class="card__button"
+                />
+              </div>
             </div>
-          </div>
-
-          <div class="card">
-            <img
-              src="./images/louise.jpg"
-              alt="Lago Louise"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">Lago Louise</h2>
-              <img
-                src="./images/hollow-heart.svg"
-                alt="Coração desmarcado"
-                class="card__button"
-              />
-            </div>
-          </div>
-
-          <div class="card">
-            <img
-              src="./images/carecas.jpg"
-              alt="Montanhas Carecas"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">Montanhas Carecas</h2>
-              <img
-                src="./images/hollow-heart.svg"
-                alt="Coração desmarcado"
-                class="card__button"
-              />
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./images/latemar.jpg" alt="Latemar" class="card__image" />
-            <div class="card__info">
-              <h2 class="card__title">Latemar</h2>
-              <img
-                src="./images/hollow-heart.svg"
-                alt="Coração desmarcado"
-                class="card__button"
-              />
-            </div>
-          </div>
-
-          <div class="card">
-            <img
-              src="./images/vanoise.jpg"
-              alt="Vanoise National Park"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">Vanoise National Park</h2>
-              <img
-                src="./images/hollow-heart.svg"
-                alt="Coração desmarcado"
-                class="card__button"
-              />
-            </div>
-          </div>
-
-          <div class="card">
-            <img
-              src="./images/braies.jpg"
-              alt="Lago di Braies"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">Lago di Braies</h2>
-              <img
-                src="./images/hollow-heart.svg"
-                alt="Coração desmarcado"
-                class="card__button"
-              />
-            </div>
-          </div>
+          </template>
         </section>
       </main>
 

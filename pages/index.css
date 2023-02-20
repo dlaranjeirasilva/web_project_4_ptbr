@@ -19,6 +19,7 @@
 @import url("../blocks/cards/cards.css");
 
 @import url("../blocks/card/card.css");
+@import url("../blocks/card/__garbage-can/card__garbage-can.css");
 @import url("../blocks/card/__image/card__image.css");
 @import url("../blocks/card/__info/card__info.css");
 @import url("../blocks/card/__title/card__title.css");
@@ -31,6 +32,11 @@
 @import url("../blocks/modal/_opened/modal_opened.css");
 @import url("../blocks/modal/__button/modal__button.css");
 @import url("../blocks/modal/__container/modal__container.css");
+
+@import url("../blocks/modal/__popup-container/modal__popup-container.css");
+@import url("../blocks/modal/__popup-image/modal__popup-image.css");
+@import url("../blocks/modal/__popup-title/modal__popup-title.css");
+@import url("../blocks/modal/__popup-button/modal__popup-button.css");
 
 @import url("../blocks/form/form.css");
 @import url("../blocks/form/__title/form__title.css");
