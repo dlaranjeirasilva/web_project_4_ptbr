@@ -61,6 +61,7 @@ function cardOperations(cardImageValue, cardTitleValue) {
     const modalPopupTitle = document.querySelector(".modal__popup-title");
 
     modalPopupImage.src = e.target.getAttribute("src");
+    modalPopupImage.alt = e.target.getAttribute("alt");
     modalPopupTitle.textContent = e.target.getAttribute("alt");
     modalOperation(modalPopup);
   });
