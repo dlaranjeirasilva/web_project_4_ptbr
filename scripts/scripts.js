@@ -1,5 +1,6 @@
 const cardsSection = document.querySelector(".cards");
 
+const modalList = document.querySelectorAll(".modal");
 const modalProfile = document.querySelector("#modal-profile");
 const modalProfileInfoName = document.querySelector(".profile-info__name");
 const modalProfileInforAboutMe = document.querySelector(
@@ -18,8 +19,8 @@ const cardAddButton = document.querySelector(".profile__button");
 
 const formProfileElement = document.querySelector("#form-profile");
 const formCardElement = document.querySelector("#form-card");
-const formName = document.querySelector(".form__name");
-const formAboutMe = document.querySelector(".form__about-me");
+const formName = document.querySelector("#name-input");
+const formAboutMe = document.querySelector("#about-me-input");
 
 const initialCards = [
   {
@@ -118,21 +119,60 @@ function fillProfileInfo() {
   formAboutMe.value = modalProfileInforAboutMe.textContent;
 }
 
+function clearInputs() {
+  const formInputList = document.querySelectorAll('.form__input');
+
+  formInputList.forEach((formInput) => {
+    const errorElement = formInput.nextElementSibling;
+    formInput.value = "";
+    formInput.classList.remove("form__input_type_error");
+    errorElement.classList.remove("form__input-error_active");
+    errorElement.textContent = "";
+  });
+};
+
 profileInfoButton.addEventListener("click", () => {
   toggleModalOperation(modalProfile);
 });
+
 cardAddButton.addEventListener("click", () => {
   toggleModalOperation(modalCard);
 });
+
 modalProfileCloseButton.addEventListener("click", () => {
   toggleModalOperation(modalProfile);
+  clearInputs();
+  fillProfileInfo();
 });
+
 modalCardCloseButton.addEventListener("click", () => {
   toggleModalOperation(modalCard);
+  clearInputs();
+  fillProfileInfo();
 });
+
 modalPopupButton.addEventListener("click", () => {
   toggleModalOperation(modalPopup);
 });
+
+modalList.forEach((modal) => {
+  document.addEventListener("keydown", (e) => {
+    if(modal.classList.contains("modal_opened") && e.key === "Escape") {
+      toggleModalOperation(modal);
+      clearInputs();
+      fillProfileInfo();
+    }
+  });
+
+  modal.addEventListener("mousedown", (e) => {
+    if(e.target.getAttribute("class") === "modal modal_opened") {
+      toggleModalOperation(e.target);
+      clearInputs();
+      fillProfileInfo();
+    }
+  });
+});
+
 formProfileElement.addEventListener("submit", handleProfileFormSubmit);
 formCardElement.addEventListener("submit", handleCardFormSubmit);
 
