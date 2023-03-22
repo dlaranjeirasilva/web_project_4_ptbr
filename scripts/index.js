@@ -83,10 +83,6 @@ function handleCardOperations(cardImageValue, cardTitleValue) {
   cardsSection.prepend(cardElement);
 }
 
-// function handlePopupModal(e) {
-//   toggleModalOperation(e.target.parentElement.parentElement);
-// }
-
 function handleProfileFormSubmit(e) {
   e.preventDefault();
 
@@ -119,21 +115,6 @@ function fillProfileInfo() {
   formName.value = modalProfileInfoName.textContent;
   formAboutMe.value = modalProfileInforAboutMe.textContent;
 }
-
-// function handleKeyDown(e) {
-//   if (e.key === "Escape") {
-//     const modalOpen = document.querySelector(".modal.modal_opened");
-//     if (modalOpen) {
-//       toggleModalOperation(modalOpen);
-//     };
-//   };
-// };
-
-// function handleMouseDown(e) {
-//   if (e.target.classList.contains("modal")) {
-//     toggleModalOperation(e.target);
-//   };
-// };
 
 function clearInputs() {
   const formInputList = document.querySelectorAll(".form__input");
@@ -171,24 +152,6 @@ modalPopupButton.addEventListener("click", () => {
   toggleModalOperation(modalPopup);
 });
 
-// modalList.forEach((modal) => {
-//   document.addEventListener("keydown", (e) => {
-//     if(modal.classList.contains("modal_opened") && e.key === "Escape") {
-//       toggleModalOperation(modal);
-//       clearInputs();
-//       fillProfileInfo();
-//     }
-//   });
-
-//   modal.addEventListener("mousedown", (e) => {
-//     if(e.target.getAttribute("class") === "modal modal_opened") {
-//       toggleModalOperation(e.target);
-//       clearInputs();
-//       fillProfileInfo();
-//     }
-//   });
-// });
-
 modalList.forEach((modal) => {
   const keydownCallback = (e) => {
     if(modal.classList.contains("modal_opened") && e.key === "Escape") {
@@ -214,18 +177,6 @@ modalList.forEach((modal) => {
     modal.removeEventListener("mousedown", mousedownCallback);
   });
 });
-
-// modalList.forEach((modal) => {
-//   modal.addEventListener("mousedown", handleMouseDown);
-//   document.addEventListener("keydown", handleKeyDown);
-// });
-
-// function removeModalEventListeners() {
-//   modalList.forEach((modal) => {
-//     modal.removeEventListener("mousedown", handleMouseDown);
-//     document.removeEventListener("keydown", handleKeyDown);
-//   });
-// };
 
 formProfileElement.addEventListener("submit", handleProfileFormSubmit);
 formCardElement.addEventListener("submit", handleCardFormSubmit);
