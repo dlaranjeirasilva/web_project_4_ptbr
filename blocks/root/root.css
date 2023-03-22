@@ -22,12 +22,12 @@ body {
 
 @media screen and (max-width: 768px) {
   .page {
-    width: 768px;
+    max-width: 768px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .page {
-    width: 320px;
+    max-width: 320px;
   }
 }

@@ -12,7 +12,7 @@
   .profile-info__about-me {
     font-size: 14px;
     padding: 0;
-    width: 373px;
+    max-width: 373px;
   }
 }
 
