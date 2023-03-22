@@ -67,11 +67,10 @@ function handleCardOperations(cardImageValue, cardTitleValue) {
     toggleModalOperation(modalPopup);
   });
   cardElement.querySelector(".card__button").addEventListener("click", (e) => {
-    if (e.target.getAttribute("src") == "./images/hollow-heart.svg") {
-      e.target.setAttribute("src", "./images/filled-heart.svg");
+    e.target.classList.toggle("card__button_active");
+    if (e.target.classList.contains("card__button_active")) {
       e.target.setAttribute("alt", "Coração marcado");
     } else {
-      e.target.setAttribute("src", "./images/hollow-heart.svg");
       e.target.setAttribute("alt", "Coração desmarcado");
     }
   });
@@ -84,9 +83,9 @@ function handleCardOperations(cardImageValue, cardTitleValue) {
   cardsSection.prepend(cardElement);
 }
 
-function handlePopupModal(e) {
-  toggleModalOperation(e.target.parentElement.parentElement);
-}
+// function handlePopupModal(e) {
+//   toggleModalOperation(e.target.parentElement.parentElement);
+// }
 
 function handleProfileFormSubmit(e) {
   e.preventDefault();
@@ -101,11 +100,13 @@ function handleCardFormSubmit(e) {
   e.preventDefault();
 
   handleCardOperations(
-    e.target.lastElementChild.previousElementSibling.value,
+    e.target.lastElementChild.previousElementSibling.previousElementSibling
+      .value,
     e.target.firstElementChild.nextElementSibling.value
   );
 
-  e.target.lastElementChild.previousElementSibling.value = "";
+  e.target.lastElementChild.previousElementSibling.previousElementSibling.value =
+    "";
   e.target.firstElementChild.nextElementSibling.value = "";
   toggleModalOperation(e.target.parentElement.parentElement);
 }
@@ -119,8 +120,23 @@ function fillProfileInfo() {
   formAboutMe.value = modalProfileInforAboutMe.textContent;
 }
 
+// function handleKeyDown(e) {
+//   if (e.key === "Escape") {
+//     const modalOpen = document.querySelector(".modal.modal_opened");
+//     if (modalOpen) {
+//       toggleModalOperation(modalOpen);
+//     };
+//   };
+// };
+
+// function handleMouseDown(e) {
+//   if (e.target.classList.contains("modal")) {
+//     toggleModalOperation(e.target);
+//   };
+// };
+
 function clearInputs() {
-  const formInputList = document.querySelectorAll('.form__input');
+  const formInputList = document.querySelectorAll(".form__input");
 
   formInputList.forEach((formInput) => {
     const errorElement = formInput.nextElementSibling;
@@ -129,7 +145,7 @@ function clearInputs() {
     errorElement.classList.remove("form__input-error_active");
     errorElement.textContent = "";
   });
-};
+}
 
 profileInfoButton.addEventListener("click", () => {
   toggleModalOperation(modalProfile);
@@ -155,23 +171,61 @@ modalPopupButton.addEventListener("click", () => {
   toggleModalOperation(modalPopup);
 });
 
+// modalList.forEach((modal) => {
+//   document.addEventListener("keydown", (e) => {
+//     if(modal.classList.contains("modal_opened") && e.key === "Escape") {
+//       toggleModalOperation(modal);
+//       clearInputs();
+//       fillProfileInfo();
+//     }
+//   });
+
+//   modal.addEventListener("mousedown", (e) => {
+//     if(e.target.getAttribute("class") === "modal modal_opened") {
+//       toggleModalOperation(e.target);
+//       clearInputs();
+//       fillProfileInfo();
+//     }
+//   });
+// });
+
 modalList.forEach((modal) => {
-  document.addEventListener("keydown", (e) => {
+  const keydownCallback = (e) => {
     if(modal.classList.contains("modal_opened") && e.key === "Escape") {
       toggleModalOperation(modal);
       clearInputs();
       fillProfileInfo();
     }
-  });
+  };
 
-  modal.addEventListener("mousedown", (e) => {
+  const mousedownCallback = (e) => {
     if(e.target.getAttribute("class") === "modal modal_opened") {
       toggleModalOperation(e.target);
       clearInputs();
       fillProfileInfo();
     }
+  };
+
+  document.addEventListener("keydown", keydownCallback);
+  modal.addEventListener("mousedown", mousedownCallback);
+
+  modal.addEventListener("click", () => {
+    document.removeEventListener("keydown", keydownCallback);
+    modal.removeEventListener("mousedown", mousedownCallback);
   });
 });
+
+// modalList.forEach((modal) => {
+//   modal.addEventListener("mousedown", handleMouseDown);
+//   document.addEventListener("keydown", handleKeyDown);
+// });
+
+// function removeModalEventListeners() {
+//   modalList.forEach((modal) => {
+//     modal.removeEventListener("mousedown", handleMouseDown);
+//     document.removeEventListener("keydown", handleKeyDown);
+//   });
+// };
 
 formProfileElement.addEventListener("submit", handleProfileFormSubmit);
 formCardElement.addEventListener("submit", handleCardFormSubmit);
