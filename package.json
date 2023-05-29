@@ -1,0 +1,23 @@
+{
+  "name": "yandex.practicum",
+  "version": "0.0.1",
+  "description": "Projeto Practicum EUA Afora - Projeto Web em Evolução Contínua",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlaranjeirasilva/web_project_4_ptbr.git"
+  },
+  "author": "Douglas Laranjeira da Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlaranjeirasilva/web_project_4_ptbr/issues"
+  },
+  "homepage": "https://github.com/dlaranjeirasilva/web_project_4_ptbr#readme",
+  "devDependencies": {
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
