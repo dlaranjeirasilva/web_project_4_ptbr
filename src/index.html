@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EUA Afora</title>
-    <link rel="stylesheet" href="./pages/index.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="<%=require('./images/faviconPlane.png')%>"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <div class="page">
       <header class="header">
         <img
-          src="./images/logo__image.png"
+          src="<%=require('./images/logo__image.png')%>"
           alt="Logo do site 'Around the US'"
           class="header__logo"
         />
@@ -23,7 +29,7 @@
             <img
               id="profile-modal__button"
               class="modal__button"
-              src="./images/close-icon.png"
+              src="<%=require('./images/close-icon.png')%>"
               alt="Ícone para fechar"
             />
             <form id="form-profile" class="form" novalidate>
@@ -50,7 +56,7 @@
                 maxlength="200"
               />
               <span class="form__input-error about-me-input-error"></span>
-              <button class="form__button">Salvar</button>
+              <button type="submit" class="form__button">Salvar</button>
             </form>
           </div>
         </section>
@@ -60,7 +66,7 @@
             <img
               id="card-modal__button"
               class="modal__button"
-              src="./images/close-icon.png"
+              src="<%=require('./images/close-icon.png')%>"
               alt="Ícone para fechar"
             />
             <form id="form-card" class="form" novalidate>
@@ -85,7 +91,7 @@
                 required
               />
               <span class="form__input-error url-input-error"></span>
-              <button class="form__button">Salvar</button>
+              <button type="submit" class="form__button">Salvar</button>
             </form>
           </div>
         </section>
@@ -95,11 +101,15 @@
             <img
               id="popup-modal__button"
               class="modal__popup-button"
-              src="./images/close-icon.png"
+              src="<%=require('./images/close-icon.png')%>"
               alt="Ícone para fechar"
             />
             <div class="modal__popup-info">
-              <img src="./images/error-404-page-not-found.jpg" alt="Não encontrado" class="modal__popup-image" />
+              <img
+                src="<%=require('./images/error-404-page-not-found.jpg')%>"
+                alt="Não encontrado"
+                class="modal__popup-image"
+              />
               <h2 class="modal__popup-title"></h2>
             </div>
           </div>
@@ -107,7 +117,7 @@
 
         <section class="profile">
           <img
-            src="./images/profile__avatar.jpg"
+            src="<%=require('./images/profile__avatar.jpg')%>"
             alt="Imagem de perfil do usuário"
             class="profile__avatar"
           />
@@ -116,7 +126,7 @@
             <p class="profile-info__about-me">Explorar</p>
             <img
               id="profile-modal"
-              src="./images/pencil-icon.svg"
+              src="<%=require('./images/pencil-icon.svg')%>"
               alt="Lápis do botão de edição de perfil"
               class="profile-info__button"
             />
@@ -133,15 +143,19 @@
           <template id="card-template">
             <ul class="card">
               <img
-                src="./images/garbage-can.png"
+                src="<%=require('./images/garbage-can.png')%>"
                 alt="Lixeira"
                 class="card__garbage-can"
               />
-              <img src="./images/error-404-page-not-found.jpg" alt="Não encontrado" class="card__image" />
+              <img
+                src="<%=require('./images/error-404-page-not-found.jpg')%>"
+                alt="Não encontrado"
+                class="card__image"
+              />
               <li class="card__info">
                 <h2 class="card__title"></h2>
                 <img
-                  src="./images/hollow-heart.svg"
+                  src="<%=require('./images/hollow-heart.svg')%>"
                   alt="Coração desmarcado"
                   class="card__button"
                 />
@@ -155,6 +169,5 @@
         <p class="footer__copyright">&copy; 2023 Around The U.S.</p>
       </section>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

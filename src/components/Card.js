@@ -1,10 +1,9 @@
-import { toggleModal } from './utils.js';
-
 class Card {
-  constructor(name, link, cardTemplate) {
+  constructor(name, link, cardTemplate, popupSelector) {
     this._name = name;
     this._link = link;
     this._cardTemplate = cardTemplate;
+    this._popupSelector = popupSelector;
   }
 
   _getTemplate() {
@@ -16,16 +15,19 @@ class Card {
     return cardElement;
   }
 
+  _handleCardClick() {
+    this._popupSelector.open(this._name, this._link);
+  }
+
   _setEventListeners() {
     const cardImage = this._element.querySelector(".card__image");
     const cardTitle = this._element.querySelector(".card__title");
     const cardDeleteButton = this._element.querySelector(".card__garbage-can");
     const cardLikeButton = this._element.querySelector(".card__button");
 
-    cardImage.addEventListener("click", () => {
-      const popupImageClicked = this._showPopupImage();
-      toggleModal(popupImageClicked);
-    });
+    cardImage.addEventListener('click', () => {
+      this._handleCardClick();
+    })
 
     cardTitle.textContent = this._name;
     cardImage.src = this._link;
@@ -38,17 +40,6 @@ class Card {
     cardLikeButton.addEventListener("click", (evt) => {
       this._handleLikeIconClick(evt);
     });
-  }
-
-  _showPopupImage() {
-    const modal = document.querySelector('#modal-popup');
-    const modalInfo = modal.querySelector('.modal__popup-info');
-
-    modalInfo.querySelector('.modal__popup-title').textContent = this._name;
-    modalInfo.querySelector('.modal__popup-image').src = this._link;
-    modalInfo.querySelector('.modal__popup-image').alt = `${this._name}`;
-
-    return modal;
   }
 
   _handleDeleteIconClick(evt) {
