@@ -15,7 +15,7 @@
   border-bottom: 1px solid red;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 331px) {
   .form__input {
     max-width: 238px;
   }

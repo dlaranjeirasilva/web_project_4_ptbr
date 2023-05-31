@@ -14,14 +14,15 @@
 
 @media screen and (max-width: 768px) {
   .profile-info {
-    padding-right: 0;
+    grid-template-columns: 320px;
+    padding: 15px 0 0;
     max-width: 373px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 331px) {
   .profile-info {
-    grid-template-columns: 222px 60px;
+    grid-template-columns: 242px;
     column-gap: 0;
     row-gap: 0;
     height: initial;

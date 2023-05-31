@@ -13,7 +13,13 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 649px) {
+  .cards {
+    grid-template-columns: 282px;
+  }
+}
+
+@media screen and (max-width: 331px) {
   .cards {
     grid-template-columns: 282px;
   }
