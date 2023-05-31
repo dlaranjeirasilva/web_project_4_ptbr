@@ -21,16 +21,16 @@
 
 @media screen and (max-width: 768px) {
   .profile-info__button {
-    font-size: 14px;
-    padding: 12px 7px;
-    height: 22px;
-    width: 22px;
-    right: -38px;
-    border: 2px solid #ffffff;
+    height: 10px;
+    width: 10px;
+    border: 1px solid;
+    grid-column-start: 2;
+    font-size: 8px;
+    position: initial;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 331px) {
   .profile-info__button {
     height: 6px;
     width: 6px;
