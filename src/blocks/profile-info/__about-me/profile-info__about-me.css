@@ -6,22 +6,25 @@
   font-size: 18px;
   font-weight: 400;
   padding-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 768px) {
   .profile-info__about-me {
-    font-size: 14px;
+    width: initial;
+    font-size: 18px;
     padding: 0;
     max-width: 373px;
+    text-align: center;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 331px) {
   .profile-info__about-me {
     width: initial;
-    display: flex;
     grid-column-end: 4;
     padding-top: 10px;
-    justify-content: center;
+    text-align: center;
   }
 }
