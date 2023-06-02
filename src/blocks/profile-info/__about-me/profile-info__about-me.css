@@ -20,6 +20,15 @@
   }
 }
 
+@media screen and (max-width: 649px) {
+  .profile-info__about-me {
+    width: initial;
+    grid-column-end: 4;
+    padding-top: 10px;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 331px) {
   .profile-info__about-me {
     width: initial;
