@@ -20,17 +20,11 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .page {
     max-width: 768px;
   }
 }
-
-/* @media screen and (max-width: 649px) {
-  .page {
-    max-width: 649px;
-  }
-} */
 
 @media screen and (max-width: 331px) {
   .page {

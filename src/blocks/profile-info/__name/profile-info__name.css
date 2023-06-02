@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .profile-info__name {
     font-size: 25px;
     text-align: right;
@@ -18,7 +18,7 @@
   }
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 768px) {
   .profile-info__name {
     font-size: 22px;
     text-align: center;

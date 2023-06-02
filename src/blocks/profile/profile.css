@@ -4,7 +4,7 @@
   margin: 40px auto 50px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .profile {
     max-width: 282px;
     margin: 40px auto 25px;
@@ -12,7 +12,7 @@
   }
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 768px) {
   .profile {
     max-width: 282px;
     margin: 40px auto 36px;
