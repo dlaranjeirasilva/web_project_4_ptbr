@@ -30,6 +30,19 @@
   }
 }
 
+@media screen and (max-width: 649px) {
+  .profile-info__button {
+    height: 8px;
+    width: 8px;
+    padding: 6px;
+    border: 1px solid;
+    grid-column-start: 2;
+    margin-left: 10px;
+    font-size: 8px;
+    position: initial;
+  }
+}
+
 @media screen and (max-width: 331px) {
   .profile-info__button {
     height: 6px;

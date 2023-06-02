@@ -6,6 +6,12 @@
   font-size: 24px;
 }
 
+@media screen and (max-width: 649px) {
+  .form__title {
+    max-width: 238px;
+  }
+}
+
 @media screen and (max-width: 331px) {
   .form__title {
     max-width: 238px;
