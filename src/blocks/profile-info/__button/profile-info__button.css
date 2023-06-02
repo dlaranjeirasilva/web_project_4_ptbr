@@ -30,7 +30,7 @@
   }
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 768px) {
   .profile-info__button {
     height: 8px;
     width: 8px;

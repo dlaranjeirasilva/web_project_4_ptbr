@@ -10,7 +10,7 @@
   text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .profile-info__about-me {
     width: initial;
     font-size: 18px;
@@ -20,7 +20,7 @@
   }
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 768px) {
   .profile-info__about-me {
     width: initial;
     grid-column-end: 4;

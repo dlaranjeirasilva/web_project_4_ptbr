@@ -12,7 +12,7 @@
   width: 415px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .profile-info {
     grid-template-columns: 320px;
     padding: 15px 0 0;
@@ -21,7 +21,7 @@
   }
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 768px) {
   .profile-info {
     grid-template-columns: 242px;
     column-gap: 0;
