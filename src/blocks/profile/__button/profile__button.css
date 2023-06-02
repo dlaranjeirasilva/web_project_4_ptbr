@@ -14,7 +14,7 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .profile__button {
     font-size: 36px;
     width: 282px;
@@ -22,7 +22,7 @@
   }
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 768px) {
   .profile__button {
     font-size: 36px;
     width: 282px;

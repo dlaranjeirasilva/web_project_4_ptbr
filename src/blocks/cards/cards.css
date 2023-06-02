@@ -6,14 +6,14 @@
   row-gap: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .cards {
     grid-template-columns: repeat(2, 282px);
     grid-template-rows: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 768px) {
   .cards {
     grid-template-columns: 282px;
   }

@@ -16,7 +16,7 @@
   opacity: 0.8;
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 768px) {
   .form__button {
     max-width: 238px;
   }
