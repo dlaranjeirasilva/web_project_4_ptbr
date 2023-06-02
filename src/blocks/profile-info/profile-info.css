@@ -16,7 +16,22 @@
   .profile-info {
     grid-template-columns: 320px;
     padding: 15px 0 0;
-    max-width: 373px;
+    column-gap: 0;
+    max-width: 353px;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  .profile-info {
+    grid-template-columns: 242px;
+    column-gap: 0;
+    row-gap: 0;
+    height: initial;
+    width: initial;
+    padding: 0;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 36px;
   }
 }
 

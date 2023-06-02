@@ -6,8 +6,16 @@
 
 @media screen and (max-width: 768px) {
   .profile {
-    max-width: 500px;
+    max-width: 282px;
     margin: 40px auto 25px;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  .profile {
+    max-width: 282px;
+    margin: 40px auto 36px;
     flex-direction: column;
   }
 }

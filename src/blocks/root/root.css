@@ -26,6 +26,12 @@ body {
   }
 }
 
+/* @media screen and (max-width: 649px) {
+  .page {
+    max-width: 649px;
+  }
+} */
+
 @media screen and (max-width: 331px) {
   .page {
     max-width: 320px;

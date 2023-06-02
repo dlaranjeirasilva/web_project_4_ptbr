@@ -12,8 +12,17 @@
 
 @media screen and (max-width: 768px) {
   .profile-info__name {
-    font-size: 30px;
+    font-size: 25px;
+    text-align: right;
+    width: 280px;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  .profile-info__name {
+    font-size: 22px;
     text-align: center;
+    width: initial;
   }
 }
 

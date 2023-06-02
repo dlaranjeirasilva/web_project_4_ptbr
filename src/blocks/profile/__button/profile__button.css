@@ -17,7 +17,15 @@
 @media screen and (max-width: 768px) {
   .profile__button {
     font-size: 36px;
-    width: 300px;
+    width: 282px;
+    position: initial;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  .profile__button {
+    font-size: 36px;
+    width: 282px;
     position: initial;
   }
 }
