@@ -18,9 +18,3 @@
     grid-template-columns: 282px;
   }
 }
-
-@media screen and (max-width: 331px) {
-  .cards {
-    grid-template-columns: 282px;
-  }
-}
