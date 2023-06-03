@@ -29,11 +29,3 @@
     position: initial;
   }
 }
-
-@media screen and (max-width: 331px) {
-  .profile__button {
-    font-size: 36px;
-    width: 282px;
-    position: initial;
-  }
-}
