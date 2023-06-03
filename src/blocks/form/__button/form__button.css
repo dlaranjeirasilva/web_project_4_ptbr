@@ -21,9 +21,3 @@
     max-width: 238px;
   }
 }
-
-@media screen and (max-width: 331px) {
-  .form__button {
-    max-width: 238px;
-  }
-}

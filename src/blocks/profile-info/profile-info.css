@@ -34,17 +34,3 @@
     padding-bottom: 36px;
   }
 }
-
-@media screen and (max-width: 331px) {
-  .profile-info {
-    grid-template-columns: 242px;
-    column-gap: 0;
-    row-gap: 0;
-    height: initial;
-    width: initial;
-    padding: 0;
-    align-items: center;
-    padding-top: 30px;
-    padding-bottom: 36px;
-  }
-}

@@ -13,9 +13,3 @@
     max-width: 238px;
   }
 }
-
-@media screen and (max-width: 331px) {
-  .form__input-error {
-    max-width: 238px;
-  }
-}

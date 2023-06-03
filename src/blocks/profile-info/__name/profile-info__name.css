@@ -25,11 +25,3 @@
     width: initial;
   }
 }
-
-@media screen and (max-width: 331px) {
-  .profile-info__name {
-    font-size: 22px;
-    text-align: center;
-    width: initial;
-  }
-}
