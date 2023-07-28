@@ -50,7 +50,7 @@ class Card {
   }
 
   _handleDeleteIconClick() {
-    this._deleteSelector._form.tempId = this._id;
+    this._deleteSelector._form.tempid = this._id;
     this._deleteSelector.open();
   }
 

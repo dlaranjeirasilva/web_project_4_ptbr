@@ -88,8 +88,8 @@ editAvatarButton.addEventListener("click", () => {
 })
 
 const confirmDelete = new PopupDeletePost('#modal-delete', (item) => {
-  api.removeCard(item.target.tempId);
-  document.getElementById(item.target.tempId).remove();
+  api.removeCard(item.target.tempid);
+  document.getElementById(item.target.tempid).remove();
 });
 
 const initialCardsSection = new Section ({
