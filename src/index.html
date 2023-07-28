@@ -86,7 +86,7 @@
                 id="url-input"
                 class="form__input"
                 type="url"
-                name="img-url"
+                name="img_url"
                 placeholder="Link da imagem"
                 required
               />
@@ -115,15 +115,62 @@
           </div>
         </section>
 
+        <section id="modal-avatar" class="modal">
+          <div class="modal__container">
+            <img
+              id="card-avatar__button"
+              class="modal__button"
+              src="<%=require('./images/close-icon.png')%>"
+              alt="Ícone para fechar"
+            />
+            <form id="form-avatar" class="form" novalidate>
+              <h2 class="form__title">Alterar a foto do perfil</h2>
+              <input
+                id="avatar-input"
+                class="form__input"
+                type="url"
+                name="avatar_url"
+                placeholder="Link da imagem de avatar"
+                required
+              />
+              <span class="form__input-error avatar-input-error"></span>
+              <button type="submit" class="form__button">Salvar</button>
+            </form>
+          </div>
+        </section>
+
+        <section id="modal-delete" class="modal">
+          <div class="modal__container">
+            <img
+              id="delete-modal__button"
+              class="modal__button"
+              src="<%=require('./images/close-icon.png')%>"
+              alt="Ícone para fechar"
+            />
+            <form id="form-delete" class="form" novalidate tempId>
+              <h2 class="form__title">Tem certeza?</h2>
+              <button id="delete-button" type="submit" class="form__button">Sim</button>
+            </form>
+          </div>
+        </section>
+
         <section class="profile">
-          <img
-            src="<%=require('./images/profile__avatar.jpg')%>"
+          <div class="profile__container">
+            <div class="spinner"></div>
+            <img
+            src=""
             alt="Imagem de perfil do usuário"
-            class="profile__avatar"
-          />
+              class="profile__avatar"
+            />
+            <img
+              src="<%=require('./images/pencil-icon.svg')%>"
+              alt="Lápis do botão de edição de avatar"
+              class="profile__edit-avatar"
+            />
+          </div>
           <div class="profile-info">
-            <h2 class="profile-info__name">Jacques Cousteau</h2>
-            <p class="profile-info__about-me">Explorar</p>
+            <h2 class="profile-info__name"></h2>
+            <p class="profile-info__about-me"></p>
             <img
               id="profile-modal"
               src="<%=require('./images/pencil-icon.svg')%>"
@@ -143,9 +190,9 @@
           <template id="card-template">
             <ul class="card">
               <img
-                src="<%=require('./images/garbage-can.png')%>"
-                alt="Lixeira"
-                class="card__garbage-can"
+              src="<%=require('./images/garbage-can.png')%>"
+              alt="Lixeira"
+              class="card__garbage-can"
               />
               <img
                 src="<%=require('./images/error-404-page-not-found.jpg')%>"
@@ -154,11 +201,14 @@
               />
               <li class="card__info">
                 <h2 class="card__title"></h2>
-                <img
-                  src="<%=require('./images/hollow-heart.svg')%>"
-                  alt="Coração desmarcado"
-                  class="card__button"
-                />
+                <div class="card__data">
+                  <img
+                    src="<%=require('./images/hollow-heart.svg')%>"
+                    alt="Coração desmarcado"
+                    class="card__button"
+                  />
+                  <p class="card__likes"></p>
+                </div>
               </li>
             </ul>
           </template>

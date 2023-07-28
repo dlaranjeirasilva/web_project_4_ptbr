@@ -1,9 +1,13 @@
 class Card {
-  constructor(name, link, cardTemplate, popupSelector) {
-    this._name = name;
-    this._link = link;
+  constructor(data, cardTemplate, popupSelector, deleteSelector) {
+    this._name = data.name;
+    this._link = data.link;
+    this._likes = data.likes;
+    this._owner = data.owner;
+    this._id = data._id;
     this._cardTemplate = cardTemplate;
     this._popupSelector = popupSelector;
+    this._deleteSelector = deleteSelector;
   }
 
   _getTemplate() {
@@ -24,35 +28,34 @@ class Card {
     const cardTitle = this._element.querySelector(".card__title");
     const cardDeleteButton = this._element.querySelector(".card__garbage-can");
     const cardLikeButton = this._element.querySelector(".card__button");
+    const cardLikesCounter = this._element.querySelector(".card__likes");
+
+    cardDeleteButton.addEventListener("click", () => {
+      this._handleDeleteIconClick();
+    });
 
     cardImage.addEventListener('click', () => {
       this._handleCardClick();
-    })
+    });
 
+    this._element.id = this._id;
     cardTitle.textContent = this._name;
     cardImage.src = this._link;
     cardImage.alt = `${this._name}`;
-
-    cardDeleteButton.addEventListener("click", (evt) => {
-      this._handleDeleteIconClick(evt);
-    });
+    cardLikesCounter.textContent = this._likes.length;
 
     cardLikeButton.addEventListener("click", (evt) => {
       this._handleLikeIconClick(evt);
     });
   }
 
-  _handleDeleteIconClick(evt) {
-    evt.target.closest(".card").remove();
+  _handleDeleteIconClick() {
+    this._deleteSelector._form.tempId = this._id;
+    this._deleteSelector.open();
   }
 
   _handleLikeIconClick(evt) {
     evt.target.classList.toggle("card__button_active");
-    if (evt.target.classList.contains("card__button_active")) {
-      evt.target.setAttribute("alt", "Coração marcado");
-    } else {
-      evt.target.setAttribute("alt", "Coração desmarcado");
-    }
   }
 
   generateCard() {

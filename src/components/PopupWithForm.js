@@ -12,7 +12,7 @@ export default class PopupWithForm extends Popup {
   _getInputValues() {
     const inputs = this._form.querySelectorAll('.form__input');
     const values = {};
-    inputs.forEach((input) => {
+    inputs.forEach(input => {
       values[input.name] = input.value;
     });
     return values;
@@ -36,24 +36,61 @@ export default class PopupWithForm extends Popup {
   setEventListeners() {
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
-      this._formSubmitCallback(this._getInputValues());
-      super.close();
+      this.setButtonState(true);
+      new Promise((resolve, reject) => {
+        const result = this._formSubmitCallback(this._getInputValues());
+        if (result instanceof Promise) {
+          result.then(resolve).catch(reject);
+        } else {
+          resolve(result);
+        }
+      })
+      .then(() => {
+        setTimeout(() => {
+          this.setButtonState(false);
+          super.close();
+        }, 1000);
+      })
+      .catch((error) => {
+        console.error(error);
+        this.setButtonState(false);
+      });
     });
   }
 
   close() {
     super.close();
     this._clearInputErrors();
+    const inputs = this._form.querySelectorAll('.form__input');
     if(this._fieldSelector.classList.contains('profile-info')) {
-      this._form.querySelectorAll('.form__input')[0].value = this._fieldSelector.firstElementChild.textContent;
-      this._form.querySelectorAll('.form__input')[1].value = this._fieldSelector.firstElementChild.nextElementSibling.textContent;
+      inputs[0].value = this._fieldSelector.firstElementChild.textContent;
+      inputs[1].value = this._fieldSelector.firstElementChild.nextElementSibling.textContent;
       this._submitButton.disabled = false;
       this._submitButton.classList.remove("form__button_inactive");
     } else {
-      this._form.querySelectorAll('.form__input')[0].value = ''
-      this._form.querySelectorAll('.form__input')[1].value = '';
+      inputs.forEach(input => {
+        input.value = '';
+      })
       this._submitButton.disabled = true;
       this._submitButton.classList.add("form__button_inactive");
+    }
+  }
+
+  setButtonState(isLoading) {
+    let count = 0;
+    if(isLoading) {
+      this._submitButton.disabled = true;
+      this._buttonInterval = setInterval(() => {
+        count++;
+        if(count > 3) {
+          count = 1;
+        }
+        this._submitButton.textContent = `Salvando${'.'.repeat(count)}`;
+      }, 250);
+    } else {
+      clearInterval(this._buttonInterval);
+      this._submitButton.textContent = 'Salvar';
+      this._submitButton.disabled = false;
     }
   }
 }
