@@ -11,6 +11,10 @@
   line-height: 2;
 }
 
+.form__input:first-of-type {
+  padding-top: 16px;
+}
+
 .form__input:invalid {
   border-bottom: 1px solid red;
 }
