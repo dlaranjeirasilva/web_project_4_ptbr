@@ -1,8 +1,7 @@
 import Popup from "./Popup.js";
 
-export default class PopupDeletePost extends Popup {
+export default class PopupWithConfirmation extends Popup {
   constructor(popupSelector, formSubmitCallback) {
-  // constructor(popupSelector) {
     super(popupSelector);
     this._form = this._popup.querySelector('.form');
     this._formSubmitCallback = formSubmitCallback;
@@ -12,7 +11,6 @@ export default class PopupDeletePost extends Popup {
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
       this._formSubmitCallback(evt);
-      // evt.target.closest(".card").remove();
       super.close();
     });
   }

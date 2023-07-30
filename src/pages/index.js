@@ -4,11 +4,12 @@ import Section from '../components/Section.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
-import PopupDeletePost from '../components/PopupDeletePost';
+import PopupWithConfirmation from '../components/PopupWithConfirmation';
 import UserInfo from '../components/UserInfo.js';
 import Api from '../components/Api';
 import {
   cardsSection,
+  currentYear,
   editAvatarButton,
   formProfileElement,
   modalProfileInfoName,
@@ -27,6 +28,8 @@ import {
   token,
 } from '../utils/constants.js';
 
+currentYear.textContent = new Date().getFullYear();
+
 const api = new Api({
   baseUrl: baseUrl,
   token: token
@@ -41,12 +44,12 @@ const userInfo = new UserInfo({
 api.getUserInfo()
 .then((userData) => {
   userInfo.setUserInfo(userData);
-  formName.value = userData.name;
-  formAboutMe.value = userData.about;
-  avatarInput.value = userData.avatar;
-  profileAvatar.src = userData.avatar;
-  modalProfileInfoName.textContent = userData.name;
-  modalProfileInforAboutMe.textContent = userData.about;
+  formName.value = userInfo.getUserInfo().name;
+  formAboutMe.value = userInfo.getUserInfo().aboutMe;
+  avatarInput.value = userInfo.getUserInfo().avatar;
+  profileAvatar.src = userInfo.getUserInfo().avatar.src;
+  modalProfileInfoName.textContent = userInfo.getUserInfo().name;
+  modalProfileInforAboutMe.textContent = userInfo.getUserInfo().aboutMe;
 })
 
 const profileFormValidator = new FormValidator({
@@ -87,7 +90,7 @@ editAvatarButton.addEventListener("click", () => {
   editAvatarForm.open();
 })
 
-const confirmDelete = new PopupDeletePost('#modal-delete', (item) => {
+const confirmDelete = new PopupWithConfirmation('#modal-delete', (item) => {
   api.removeCard(item.target.tempid);
   document.getElementById(item.target.tempid).remove();
 });
@@ -99,7 +102,7 @@ const initialCardsSection = new Section ({
       item,
       '#card-template',
       new PopupWithImage('#modal-popup'),
-      new PopupDeletePost('#modal-delete')
+      new PopupWithConfirmation('#modal-delete')
       );
       api.getUserInfo()
       .then((userInfo) => {
@@ -158,7 +161,7 @@ const formCard = new PopupWithForm('#modal-card', (formData) => {
       cardData,
       '#card-template',
       new PopupWithImage('#modal-popup'),
-      new PopupDeletePost('#modal-delete')
+      new PopupWithConfirmation('#modal-delete')
       );
       const actualCard = newCard.generateCard();
       const actualCardLikes = actualCard.querySelector('.card__likes');

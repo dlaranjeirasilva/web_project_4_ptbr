@@ -35,3 +35,5 @@ export const avatarFormElement = document.querySelector("#form-avatar");
 export const cards = document.querySelectorAll(".card");
 
 export const spinner = document.querySelector(".spinner");
+
+export const currentYear = document.querySelector("#currentYear");
